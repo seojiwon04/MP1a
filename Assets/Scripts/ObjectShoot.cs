@@ -7,26 +7,41 @@ public class ObjectShoot : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject star;
     public ParticleSystem poof;
-    public InputActionReference spawnButton;
-    public Transform controller;
-    public AudioClip poofSound;
-    public GameObject planet;
-    void OnSpawn(InputAction.CallbackContext ctx)
-    {
-        GameObject starObj = Instantiate(star, controller.position, controller.rotation * Quaternion.Euler(-45f,0f,0f));
-        StarVelocity starVelocity = starObj.GetComponent<StarVelocity>();
-        starVelocity.planet = planet.transform;
-        starVelocity.Launch(controller.forward);  
+    public InputActionReference spawnButtonLeft;
+    public InputActionReference spawnButtonRight;
 
-        Instantiate(poof, controller.position, controller.rotation);
-        AudioSource.PlayClipAtPoint(poofSound, controller.position);
+    public Transform controllerLeft;
+    public Transform controllerRight;
+    public AudioClip poofSound;
+
+
+    void OnSpawnLeft(InputAction.CallbackContext ctx)
+    {
+        GameObject starObj = Instantiate(star, controllerLeft.position, controllerLeft.rotation * Quaternion.Euler(-45f,0f,0f));
+        starObj.GetComponent<StarVelocity>().velocity = controllerLeft.forward * 10f;
+    
+        Instantiate(poof, controllerLeft.position, controllerLeft.rotation);
+        AudioSource.PlayClipAtPoint(poofSound, controllerLeft.position);
+        Debug.Log("left button pressed");
+    }
+
+    void OnSpawnRight(InputAction.CallbackContext ctx)
+    {
+        GameObject starObj = Instantiate(star, controllerRight.position, controllerRight.rotation * Quaternion.Euler(45f,0f,0f));
+        starObj.GetComponent<StarVelocity>().velocity = controllerRight.forward * 10f;
+    
+        Instantiate(poof, controllerRight.position, controllerRight.rotation);
+        AudioSource.PlayClipAtPoint(poofSound, controllerRight.position);
         Debug.Log("left button pressed");
     }
 
     void Start()
     {
-        spawnButton.action.Enable();
-        spawnButton.action.performed += OnSpawn;
+        spawnButtonLeft.action.Enable();
+        spawnButtonLeft.action.performed += OnSpawnLeft;
+
+        spawnButtonRight.action.Enable();
+        spawnButtonRight.action.performed += OnSpawnRight;
     }
 
     // Update is called once per frame

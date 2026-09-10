@@ -869,7 +869,7 @@ MonoBehaviour:
   m_text: 'Controls
 
 
-    Left Button X - Shoot
+    Left & Right Trigger - Shoot
 
     Left Button Y - Teleport
 
@@ -1200,6 +1200,11 @@ Skybox:
   m_GameObject: {fileID: 521374633}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 582c1504757bd1945a2e46393ecd92a9, type: 2}
+--- !u!4 &531585166 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1670256625, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1634700894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583657682
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,10 +2174,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectShoot
   star: {fileID: 8247463521022371175, guid: 37b68c6258b7bcb41bbca9de13582a09, type: 3}
   poof: {fileID: 6553955482580311041, guid: 3f550f7cf81e33e459d581ddc46abde3, type: 3}
-  spawnButton: {fileID: 5113088590926889233, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
-  controller: {fileID: 831068449}
+  spawnButtonLeft: {fileID: 6986180202050166755, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  spawnButtonRight: {fileID: 6454596279149084813, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  controllerLeft: {fileID: 831068449}
+  controllerRight: {fileID: 531585166}
   poofSound: {fileID: 8300000, guid: f4b5a7ca4fae0f24183e9510b4f4e16a, type: 3}
-  planet: {fileID: 819222630}
 --- !u!1001 &1597664086
 PrefabInstance:
   m_ObjectHideFlags: 0
