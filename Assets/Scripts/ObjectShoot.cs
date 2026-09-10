@@ -14,15 +14,10 @@ public class ObjectSpawn : MonoBehaviour
         Instantiate(star, controller.position, controller.rotation);
     }
 
-    void OnEnable()
-    {
-        spawnButton.action.performed += OnSpawn;
-        
-    }
-
     void Start()
     {
         spawnButton.action.Enable();
+        spawnButton.action.performed += OnSpawn;
     }
 
     // Update is called once per frame
