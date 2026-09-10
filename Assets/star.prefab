@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e9b43e0df8560634e8d70867087967c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.983
+      value: 7.82394
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e9b43e0df8560634e8d70867087967c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10.9392
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e9b43e0df8560634e8d70867087967c5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.62273
+      value: -7.56341
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e9b43e0df8560634e8d70867087967c5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -94,3 +94,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StarVelocity
   velocity: {x: 0, y: 0, z: 0}
+  gravity: 1.4
+  planet: {fileID: 0}

@@ -2172,6 +2172,7 @@ MonoBehaviour:
   spawnButton: {fileID: 5113088590926889233, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
   controller: {fileID: 831068449}
   poofSound: {fileID: 8300000, guid: f4b5a7ca4fae0f24183e9510b4f4e16a, type: 3}
+  planet: {fileID: 819222630}
 --- !u!1001 &1597664086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3152,6 +3153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrbitComet
   position:
+    x: 0
+    y: 0
+    z: 0
+  attractorPosition:
     x: 0
     y: 0
     z: 0

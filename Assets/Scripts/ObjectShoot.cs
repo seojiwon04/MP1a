@@ -10,10 +10,14 @@ public class ObjectShoot : MonoBehaviour
     public InputActionReference spawnButton;
     public Transform controller;
     public AudioClip poofSound;
+    public GameObject planet;
     void OnSpawn(InputAction.CallbackContext ctx)
     {
         GameObject starObj = Instantiate(star, controller.position, controller.rotation * Quaternion.Euler(-45f,0f,0f));
-        starObj.GetComponent<StarVelocity>().velocity = controller.forward * 10f;
+        StarVelocity starVelocity = starObj.GetComponent<StarVelocity>();
+        starVelocity.planet = planet.transform;
+        starVelocity.Launch(controller.forward);  
+
         Instantiate(poof, controller.position, controller.rotation);
         AudioSource.PlayClipAtPoint(poofSound, controller.position);
         Debug.Log("left button pressed");
