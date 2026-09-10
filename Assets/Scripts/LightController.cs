@@ -7,15 +7,16 @@ public class LightController : MonoBehaviour
     public Light light;
     public float cycleSpeed = 0.5f;
     private float hue = 0f;
+    public InputActionReference lightChangeButton;
     void Start()
     {
-        light = GetComponent<Light>();
+        lightChangeButton.action.Enable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.lKey.isPressed)
+        if (lightChangeButton.action.IsPressed())
         {
             hue = Mathf.Repeat(hue + cycleSpeed * Time.deltaTime, 1f);
             light.color = Color.HSVToRGB(hue, 1f, 1f);
