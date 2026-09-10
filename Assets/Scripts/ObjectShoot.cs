@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,14 +7,22 @@ public class ObjectSpawn : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject star;
     public ParticleSystem poof;
-    public Camera mainCamera;
-    public InputActionReference spawn;
+    public InputActionReference spawnButton;
+    public Transform controller;
+    void OnSpawn(InputAction.CallbackContext ctx)
+    {
+        Instantiate(star, controller.position, controller.rotation);
+    }
 
-    
+    void OnEnable()
+    {
+        spawnButton.action.performed += OnSpawn;
+        
+    }
 
     void Start()
     {
-        
+        spawnButton.action.Enable();
     }
 
     // Update is called once per frame
