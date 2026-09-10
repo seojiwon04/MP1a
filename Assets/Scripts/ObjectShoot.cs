@@ -11,7 +11,10 @@ public class ObjectShoot : MonoBehaviour
     public Transform controller;
     void OnSpawn(InputAction.CallbackContext ctx)
     {
-        Instantiate(star, controller.position, controller.rotation);
+        GameObject starObj = Instantiate(star, controller.position, controller.rotation * Quaternion.Euler(-45f,0f,0f));
+        starObj.GetComponent<StarVelocity>().velocity = controller.forward * 10f;
+        Instantiate(poof, controller.position, controller.rotation);
+        Debug.Log("left button pressed");
     }
 
     void Start()
